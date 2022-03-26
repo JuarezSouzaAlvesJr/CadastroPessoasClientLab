@@ -1,0 +1,15 @@
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\bin\Debug\net6.0\CadastroPessoasClientLab.exe
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\bin\Debug\net6.0\CadastroPessoasClientLab.deps.json
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\bin\Debug\net6.0\CadastroPessoasClientLab.runtimeconfig.json
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\bin\Debug\net6.0\CadastroPessoasClientLab.dll
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\bin\Debug\net6.0\CadastroPessoasClientLab.pdb
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\obj\Debug\net6.0\CadastroPessoasClientLab.csproj.AssemblyReference.cache
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\obj\Debug\net6.0\CadastroPessoasClientLab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\obj\Debug\net6.0\CadastroPessoasClientLab.AssemblyInfoInputs.cache
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\obj\Debug\net6.0\CadastroPessoasClientLab.AssemblyInfo.cs
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\obj\Debug\net6.0\CadastroPessoasClientLab.csproj.CoreCompileInputs.cache
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\obj\Debug\net6.0\CadastroPessoasClientLab.dll
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\obj\Debug\net6.0\refint\CadastroPessoasClientLab.dll
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\obj\Debug\net6.0\CadastroPessoasClientLab.pdb
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\obj\Debug\net6.0\CadastroPessoasClientLab.genruntimeconfig.cache
+C:\Users\jdeso\OneDrive\Área de Trabalho\CadastroPessoasClientLab\obj\Debug\net6.0\ref\CadastroPessoasClientLab.dll
