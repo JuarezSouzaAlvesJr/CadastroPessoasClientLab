@@ -11,13 +11,13 @@ namespace CadastroPessoasClientLab.classes
         //primeiro, o modificador de acesso (no caso, é público); depois o tipo do atributo (no caso, o nome é uma string); por fim, o nome do atributo (no caso, "nome"). 
         //O "get; set" é opcional, mas em alguns casos é importante colocar para determinar se o atributo poderá ser modificado ou não, por exemplo, o saldo pode ser consultado (get), mas não modificado (set), nesse caso colocaríamos "private set".
         //o ponto de interrogação serve para indicar que a propriedade "nome" pode ter valor nulo, ou seja, nós não precisamos necessariamente atribuir um valor para ela para fazer a execução. Esse pode ser um recurso necessário no tipo string.
-        public string? Nome { get; set; }
+        public string? nome { get; set; }
 
-        public float Rendimento { get; set; }
+        public float rendimento { get; set; }
 
         //atalho para criar a propriedade: "prop" (creats a property)
     
-        public string? Endereco { get; set; }
+        public Endereco? endereco { get; set; }
 
 
         //O método "pagarImposto" é abstrato, pois a lógica dele só será feita nas classes "filhas" (a lógica ficará contida na classe "pessoaFisica" e "pessoaJuridica). Logo, esse método não terá um corpo.
