@@ -1,5 +1,7 @@
 using CadastroPessoasClientLab.interfaces;
 
+using System.Text.RegularExpressions;
+
 namespace CadastroPessoasClientLab.classes
 {
     public class PessoaJuridica : Pessoa , IPessoaJuridica
@@ -13,9 +15,31 @@ namespace CadastroPessoasClientLab.classes
             throw new NotImplementedException();
         }
 
+
+        //formatos do CNPJ: XX.XXX.XXX/OOO1-XX (18 caracteres) ou XXXXXXXX0001XX (14 caracteres)
         public bool ValidarCnpj(string cnpj)
         {
-            throw new NotImplementedException();
+            //Regex para verificar o formato de uma string. Damos "ctrl + ." para adicionar o using. Utilizamos o operador bitwise (|), equivalente a "ou", para fazer a comparação com os possíveis formatos do CNPJ.
+            //Toda essa comparação retorna um booleano (true ou false). Por isso, foi colocado dentro do 'if'.
+            if (Regex.IsMatch(cnpj, @"(^(\d{2}.\d{3}.\d{3}/\d{4}-\d{2})|(\d{14})$)"))
+            {
+                if (cnpj.Length == 18)
+                {
+                    if (cnpj.Substring(11, 4) == "0001") //pegará os 4 caracteres após o 11º e verificará se é igual a 0001
+                    {
+                        return true;
+                    }   
+
+                } else if (cnpj.Length == 14)
+                {
+                    if (cnpj.Substring(8, 4) == "0001") //pegará os 4 caracteres após o 8º e verificará se é igual a 0001
+                    {
+                        return true;
+                    }
+                }
+                
+            }
+            return false;
         }
     }
 }
