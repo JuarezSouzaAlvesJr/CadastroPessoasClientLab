@@ -70,14 +70,13 @@ do
             novoEnd.enderecoComercial = false;
 
             Console.Clear();
-            Console.WriteLine(novaPf.nome); //será escrito no console o valor que está salvo em "novaPf"
+            // Console.WriteLine(novaPf.nome); //será escrito no console o valor que está salvo em "novaPf"
 
-            //atalho para Console.WriteLine(): "cwl"
+            // //atalho para Console.WriteLine(): "cwl"
 
-            Console.WriteLine($"Nome: {novaPf.nome} Rendimento: {novaPf.rendimento}"); //interpolação
-            Console.WriteLine("Nome: " + novaPf.nome + " Rendimento: " + novaPf.rendimento); //concatenação
+            // Console.WriteLine($"Nome: {novaPf.nome} Rendimento: {novaPf.rendimento}"); //interpolação
+            // Console.WriteLine("Nome: " + novaPf.nome + " Rendimento: " + novaPf.rendimento); //concatenação
 
-            Console.WriteLine($"{metodoPf.ValidarDataNasc(novaPf.dataNasc)}");
             Console.WriteLine($"{metodoPf.ValidarDataNasc("17/06/1995")}");
 
 
@@ -85,7 +84,11 @@ do
             Nome: {novaPf.nome}
             CPF: {novaPf.cpf}
             Endereço: {novaPf.endereco.logradouro}, {novaPf.endereco.numero}
+            Rendimento: {novaPf.rendimento.ToString("C")} 
+            Valor de imposto a ser pago: {metodoPf.PagarImposto(novaPf.rendimento).ToString("C")}
+            Maior de idade: {(metodoPf.ValidarDataNasc(novaPf.dataNasc)? "Sim" : "Não")}
             ");
+            //"ToString" com o argumento "C" para exibir o valor conforme o padrão monetário de real, moeda local do Brasil
 
             Console.WriteLine("Aperte ENTER para continuar.");
             Console.ReadLine();
@@ -115,6 +118,8 @@ do
             CNPJ: {novaPj.Cnpj}
             CHPJ válido: {metodoPj.ValidarCnpj(novaPj.Cnpj)}
             Endereço: {novaPj.endereco.logradouro}, {novaPj.endereco.numero}
+            Rendimento: {novaPj.rendimento.ToString("C")} 
+            Valor de imposto a ser pago: {metodoPj.PagarImposto(novaPj.rendimento).ToString("C")}
             ");
 
             Console.WriteLine(metodoPj.ValidarCnpj("00000000000100"));

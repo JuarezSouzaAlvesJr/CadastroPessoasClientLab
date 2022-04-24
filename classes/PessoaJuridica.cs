@@ -12,7 +12,22 @@ namespace CadastroPessoasClientLab.classes
 
         public override float PagarImposto(float rendimento)
         {
-            throw new NotImplementedException();
+            if (rendimento <= 3000)
+            {
+                return rendimento*0.03f; //3% do rendimento;
+            }
+            else if (rendimento <= 6000)
+            {
+                return rendimento*0.05f; //5% do rendimento
+            }
+            else if (rendimento <= 10000)
+            {
+                return rendimento*0.07f; //7% do rendimento
+            }
+            else
+            {
+                return rendimento*0.09f; //acima de 10000, paga-se 9% do rendimento
+            }
         }
 
 

@@ -18,8 +18,24 @@ namespace CadastroPessoasClientLab.classes
         //override = sobrescrito
         public override float PagarImposto(float rendimento)
         {
-            throw new NotImplementedException();
+            if (rendimento <= 1500)
+            {
+                return 0;
+            }
+            else if (rendimento > 1500 && rendimento <= 3500)
+            {
+                return rendimento*0.02f; //2% do rendimento
+            }
+            else if (rendimento > 3500 && rendimento <= 6000)
+            {
+                return rendimento*0.035f; //3,5% do rendimento
+            }
+            else
+            {
+                return rendimento*0.05f; //acima de 6000, paga-se 5% do rendimento
+            }
         }
+
 
         //Criação do método de validação da data de nascimento. Apagamos o "throw new NotImplementedException();"
         public bool ValidarDataNasc(DateTime dataNasc) //Esse método deve retornar se a idade é maior que 18 anos ou não, ou seja, true (verdadeiro) ou false (falso). Por isso, usamos o "bool".
