@@ -12,7 +12,7 @@ namespace CadastroPessoasClientLab.classes
     {
         public string? cpf { get; set; }
 
-        public DateTime dataNasc { get; set; }
+        public string? dataNasc { get; set; }
 
 
         //override = sobrescrito
@@ -45,7 +45,7 @@ namespace CadastroPessoasClientLab.classes
             //A diferença entre as datas retornará um valor em dias, meses e anos, ou seja, o resultado será do tipo DateTime. Iremos converter o resultado para dias apenas, usando o recurso 'TotalDays'. Depois, dividiremos esse valor por 365 (número de dias de um ano). O resultado será um número decimal que pode ter várias casas decimais. Então, iremos armazenar numa variável do tipo 'double'
             double anos = (dataAtual - dataNasc).TotalDays / 365;
             
-            Console.WriteLine($"{anos}");
+            // Console.WriteLine($"{anos}");
             
 
             if (anos >= 18) 
@@ -76,7 +76,7 @@ namespace CadastroPessoasClientLab.classes
 
                 double anos = (dataAtual - dataConvertida).TotalDays / 365;
             
-                Console.WriteLine($"{anos}");
+                // Console.WriteLine($"{anos}");
 
                 if (anos >= 18 && anos < 120) 
                 {

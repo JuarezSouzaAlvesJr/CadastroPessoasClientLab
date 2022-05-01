@@ -6,7 +6,7 @@ namespace CadastroPessoasClientLab.classes
 {
     public class PessoaJuridica : Pessoa , IPessoaJuridica
     {
-        public string? Cnpj { get; set; }
+        public string? cnpj { get; set; }
 
         public string? razaoSocial { get; set; }
 
