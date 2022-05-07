@@ -126,6 +126,23 @@ do
 
                         //Agora, vamos adicionar essa pessoa cadastrada na lista.
                         listaPf.Add(novaPf);
+
+                        //criação do arquivo txt 
+                        // StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt");
+                        // sw.WriteLine(novaPf.nome);
+                        // sw.Close();
+
+                        //Outra forma de fazer a criação do arquivo txt sem o 'Close'
+                        using (StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt"))
+                        {
+                            sw.WriteLine(@$"
+                                Nome: {novaPf.nome}
+                                CPF: {novaPf.cpf}
+                                Endereço: {novaPf.endereco.logradouro}, {novaPf.endereco.numero}
+                                Rendimento: {novaPf.rendimento.ToString("C")} 
+                                Valor de imposto a ser pago: {metodoPf.PagarImposto(novaPf.rendimento).ToString("C")}");
+                        }
+                        
                         Console.WriteLine($"Cadastro realizado com sucesso!");
                         Thread.Sleep(3000);
 
@@ -156,6 +173,19 @@ do
                             Console.WriteLine($"Lista vazia!");
                             Thread.Sleep(3000);
                         }
+
+                        using (StreamReader sr = new StreamReader("Adriano.txt"))
+                        {
+                            string? linha;
+                            while ((linha = sr.ReadLine()) != null)
+                            {
+                                Console.WriteLine($"{linha}");
+                            }
+                            //Laço de repetição para ler o arquivo enquanto houver conteúdo. Quando for para uma linha em branco, o arquivo será fechado.
+                        }
+
+                        Console.WriteLine("Aperte ENTER para continuar.");
+                        Console.ReadLine();
 
                         break;
 
@@ -298,9 +328,11 @@ do
                         Console.WriteLine($"Cadastro realizado com sucesso!");
                         Thread.Sleep(3000);
                         
+                        metodoPj.Inserir(novaPj);
+
                         break;
 
-                        case "2": //vai listar cada pessoa física presente na lista
+                        case "2": //vai listar cada pessoa jurídica presente na lista
                         Console.Clear();
 
                         if (listaPj.Count > 0)
@@ -326,6 +358,21 @@ do
                             Thread.Sleep(3000);
                         }
 
+
+                        List<PessoaJuridica> listaPJ = metodoPj.LerArquivo();
+
+                        foreach (PessoaJuridica cadaPj in listaPJ)
+                        {
+                            Console.Clear();
+                            Console.WriteLine(@$"
+                                Nome: {cadaPj.nome}
+                                CNPJ: {cadaPj.cnpj}
+                                Razão Social: {cadaPj.razaoSocial}
+                                ");
+
+                                Console.WriteLine("Aperte ENTER para continuar.");
+                                Console.ReadLine();
+                        }
                         break;
 
                     case "0":

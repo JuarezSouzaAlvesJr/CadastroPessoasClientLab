@@ -22,5 +22,22 @@ namespace CadastroPessoasClientLab.classes
 
         //O método "pagarImposto" é abstrato, pois a lógica dele só será feita nas classes "filhas" (a lógica ficará contida na classe "pessoaFisica" e "pessoaJuridica). Logo, esse método não terá um corpo.
         public abstract float PagarImposto(float rendimento);
+
+        public void VerificarPastaArquivo(string caminho){
+
+            string pasta = caminho.Split("/")[0]; //Apenas o nome da pasta ('Database') será salva na string 'pasta'. A barra (/) é o separador e o 0 indica a posição dessa pasta no array 'Database/PessoaJuridica.csv'
+
+            //Usamos o IF para verificar a existência da pasta.
+            if (!Directory.Exists(pasta)) //O ponto de exclamação inverte, então estamos verificando se a pasta NÃO existe.
+            {
+                Directory.CreateDirectory(pasta); //A pasta será criada.
+            }
+
+            //Fazemos o mesmo para o arquivo. Mas usaremos o 'using' para o fechamento do arquivo após a criação.
+            if (!File.Exists(caminho))
+            {
+                using (File.Create(caminho)){}
+            }
+        }
     }
 }

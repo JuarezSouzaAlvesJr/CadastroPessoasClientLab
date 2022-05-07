@@ -10,6 +10,10 @@ namespace CadastroPessoasClientLab.classes
 
         public string? razaoSocial { get; set; }
 
+        public string caminho { get; private set; } = "Database/PessoaJuridica.csv"; //o 'private' é para indicar que o atributo 'caminho' não poderá ser alterado de qualquer lugar
+        
+        
+
         public override float PagarImposto(float rendimento)
         {
             if (rendimento <= 3000)
@@ -56,5 +60,46 @@ namespace CadastroPessoasClientLab.classes
             }
             return false;
         }
+
+        //Método para inserção de dados no arquivo csv.
+        public void Inserir(PessoaJuridica pj){
+
+            //Primeiro, fazemos a verificação.
+            VerificarPastaArquivo(caminho);
+
+            //Agora, é preciso transformar o objeto em string, pois não é possível inserir objeto num arquivo de texto ou csv.
+
+            string[] pjString = {$"{pj.nome},{pj.cnpj},{pj.razaoSocial}"};
+
+            //Por fim, será salvo dentro do arquivo.
+            File.AppendAllLines(caminho, pjString); //Os argumentos são 'caminho + conteúdo'.
+
+        }
+
+        //Método de leitura do arquivo csv. Para isso, pegamos o conteúdo salvo na string e o transformamos em objeto. O retorno desse método será uma lista com o conteúdo presente no objeto 'PessoaJuridica'.
+        public List<PessoaJuridica> LerArquivo(){
+
+            List<PessoaJuridica> listaPj = new List<PessoaJuridica>();
+
+            string[] linhas = File.ReadAllLines(caminho);
+
+            foreach (string cadaLinha in linhas)
+            {
+                string[] atributos = cadaLinha.Split(",");
+
+                //Um novo objeto para salvar os atributos.
+                PessoaJuridica cadaPj = new PessoaJuridica();
+
+                cadaPj.nome = atributos[0];
+                cadaPj.cnpj = atributos[1];
+                cadaPj.razaoSocial = atributos[2];
+
+                //Agora, só falta adicionar esse objeto na lista "listaPj".
+                listaPj.Add(cadaPj);
+            }
+
+            return listaPj;
+        }
+
     }
 }

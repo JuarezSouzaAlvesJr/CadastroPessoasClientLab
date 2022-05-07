@@ -1,0 +1,6 @@
+
+                                Nome: Adriano
+                                CPF: 1234567890
+                                Endereço: Rua Dinamarca, 180
+                                Rendimento: R$ 5.000,00 
+                                Valor de imposto a ser pago: R$ 175,00
